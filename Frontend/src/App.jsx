@@ -26,9 +26,9 @@ export default function App() {
   });
 
   return (
-    <div className="flex justify-center items-center w-full h-[100vh] border-2 bg-[#1E1E1E]">
-      <div
-        className="w-1/2 h-auto border-gray-500 border rounded-4xl bg-[#2B2B2B] flex justify-start items-center p-4 gap-2"
+    <div className="flex flex-col justify-center items-center w-full h-[100vh] border-2 bg-[#1E1E1E]">
+      <h2 className="text-white text-3xl font-bold mb-4">Upload Your Resume Here</h2>
+      <div className="w-1/2 h-auto border-gray-500 border rounded-4xl bg-[#2B2B2B] flex justify-start items-center p-4 gap-2"
         {...getRootProps()}
       >
         <input {...getInputProps()} />
@@ -38,9 +38,7 @@ export default function App() {
         <div className="flex justify-center items-center">
           {
             fileName ? (
-              fileName && (
-                <p className="text-gray-300 font-bold underline">{fileName}</p>
-              )
+              <p className="text-gray-300 font-bold underline">{fileName}</p>
             ) : (
               isDragActive ? (
                 <p className="text-gray-400">Drop the files here ...</p>
@@ -51,9 +49,9 @@ export default function App() {
           }
         </div>
         <button onClick={() => alert("Submit file")} className="gap-2 bg-gray-400 rounded-full ml-auto p-1.5">
-            <FaArrowUp size={20}/>
+          <FaArrowUp size={20}/>
         </button>
-        </div>
+      </div>
     </div>
   );
 }
